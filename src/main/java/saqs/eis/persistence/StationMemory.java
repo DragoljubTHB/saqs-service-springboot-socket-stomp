@@ -1,9 +1,10 @@
-package saqs.eis;
+package saqs.eis.persistence;
+
+import saqs.eis.model.Station;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.stream.Collectors;
 
 public class StationMemory {
 

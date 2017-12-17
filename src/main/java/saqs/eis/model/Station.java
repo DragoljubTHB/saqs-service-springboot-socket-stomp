@@ -1,4 +1,4 @@
-package saqs.eis;
+package saqs.eis.model;
 
 
 public class Station {
