@@ -1,10 +1,14 @@
 package saqs.eis.model;
 
 
+import java.text.SimpleDateFormat;
+
 public class Station {
     private String id;
     private String name;
     private Integer target;
+    private Integer actual;
+    private String date;
 
     public String getId() {
         return id;
@@ -28,5 +32,21 @@ public class Station {
 
     public void setTarget(Integer target) {
         this.target = target;
+    }
+
+    public Integer getActual() {
+        return actual;
+    }
+
+    public void setActual(Integer actual) {
+        this.actual = actual;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }
