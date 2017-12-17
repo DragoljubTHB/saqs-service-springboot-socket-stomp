@@ -5,7 +5,7 @@ import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class StationsController {
+public class StationsWebSocketController {
 
     @MessageMapping("/stations")
     @SendTo("/basestations")
