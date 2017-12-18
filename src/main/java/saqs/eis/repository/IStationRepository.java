@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface IStationRepository {
     List<Station> findAll();
+
+    void createStation(Station station);
 }

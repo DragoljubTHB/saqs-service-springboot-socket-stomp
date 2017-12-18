@@ -47,6 +47,12 @@ public class StationService implements IStationService {
     }
 
     @Override
+    public void createStation(StationDTO stationDTO) {
+        Station station = modelMapper.map(stationDTO, Station.class);
+        stationRepository.createStation(station);
+    }
+
+    @Override
     public List<Station> findAll() {
         return stationRepository.findAll();
     }

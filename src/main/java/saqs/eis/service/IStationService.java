@@ -9,4 +9,6 @@ public interface IStationService {
     List<Station> findAll();
 
     List<StationDTO> getAllStationsDTO();
+
+    void createStation(StationDTO stationDTO);
 }
