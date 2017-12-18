@@ -7,10 +7,10 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class StationsWebSocketController {
 
-    @MessageMapping("/stations")
+    @MessageMapping("/basestations")
     @SendTo("/basestations")
-    public String greeting(String message) throws Exception {
-        Thread.sleep(1000); // simulated delay
+    public String greeting() throws Exception {
+        System.out.println("got message-> ");
         return "hello!";
     }
 
