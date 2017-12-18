@@ -1,17 +1,24 @@
 package saqs.eis.websockets;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
+import saqs.eis.service.IStationService;
+import saqs.eis.transfer.StationDTO;
+
+import java.util.List;
 
 @Controller
 public class StationsWebSocketController {
 
+    @Autowired
+    private IStationService stationService;
+
     @MessageMapping("/basestations")
     @SendTo("/topic/basestations")
-    public Greeting greeting(HelloMessage message) throws Exception {
-        System.out.println("got message-> "+message);
-        return new Greeting("hello");
+    public List<StationDTO> greeting(HelloMessage message) throws Exception {
+        return stationService.getAllStationsDTO();
     }
 
     @MessageMapping("/hello")
