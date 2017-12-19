@@ -17,7 +17,14 @@ public class StationsWebSocketController {
 
     @MessageMapping("/basestations")
     @SendTo("/topic/basestations")
-    public List<StationDTO> getAll(HelloMessage message) throws Exception {
+    public List<StationDTO> getAll() throws Exception {
+        return stationService.getAllStationsDTO();
+    }
+
+    @MessageMapping("/station")
+    @SendTo("/topic/basestations")
+    public List<StationDTO> create(StationDTO stationDTO) throws Exception {
+        stationService.createStation(stationDTO);
         return stationService.getAllStationsDTO();
     }
 
